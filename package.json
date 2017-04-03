@@ -6,7 +6,7 @@
   "author": {
     "name": "Gant Laborde",
     "email": "gant@infinite.red",
-    "url": "https://example.com/path/to/your/plugin"
+    "url": "https://github.com/GantMan/ignite-source-map"
   },
   "scripts": {
     "lint": "standard",
@@ -18,7 +18,7 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "url": "https://example.com/path/to/your/plugin",
+  "url": "https://github.com/GantMan/ignite-source-map",
   "repository": "githuborg/reponame",
   "devDependencies": {
     "ava": "^0.18.2",
