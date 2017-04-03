@@ -5,10 +5,10 @@ const SourceMapConsumer = require('source-map').SourceMapConsumer
 
 /*
 * Example 1:  To get one specific mapping
-* ignite source-map lookup ./someFolder/index.ios.map 32:45
+* ignite ignite-source-map lookup ./someFolder/index.ios.map 32:45
 *
 * Example 2:  To parse a stack trace string and convert it to usable output
-* ignite source-map lookup ./someFolder/index.ios.map stackTrace.txt
+* ignite ignite-source-map lookup ./someFolder/index.ios.map stackTrace.txt
 */
 module.exports = async function (context) {
 
@@ -17,8 +17,8 @@ module.exports = async function (context) {
   const { options } = parameters
 
   const example = ` e.g.
-    ignite source-map lookup ./someFolder/index.ios.map 32:75
-    ignite source-map lookup ./someFolder/index.ios.map stackTrace.txt
+    ignite ignite-source-map lookup ./someFolder/index.ios.map 32:75
+    ignite ignite-source-map lookup ./someFolder/index.ios.map stackTrace.txt
   `
 
   const printSourceResult = (smc, position) => {
@@ -27,8 +27,8 @@ module.exports = async function (context) {
     const styledSource = colors.yellow(source)
 
     info(`${styledName}: ${styledSource}
-    Line: ${line}
-    Column: ${column}
+      Line: ${line}
+      Column: ${column}
     `)
   }
 
@@ -47,9 +47,8 @@ module.exports = async function (context) {
     }
   }
 
-  console.log(parameters)
-  const mapfile = parameters.second
-  const location = parameters.third
+  const mapfile = parameters.first
+  const location = parameters.second
   let stackfile = null
   let line = null
   let column = null
